@@ -38,7 +38,7 @@
             class="clouds" 
             :style="cloudStyle"
             alt="Clouds"
-            src="/images/HG.w_1920.png"
+            src="/images/HG.w_1920.webp"
             :srcset="`/images/HG.w_768.webp 768w, /images/HG.w_1017.webp 1017w, /images/HG.w_1920.webp 1920w`"
             sizes="(max-width: 1920px) 100vw, 1920px"
         >
@@ -46,7 +46,7 @@
             class="mountains" 
             :style="mountainsStyle"
             alt="Mountains"
-            src="/images/MG.w_1920.png"
+            src="/images/MG.w_1920.webp"
             :srcset="`/images/MG.w_768.webp 768w, /images/MG.w_1017.webp 1017w, /images/MG.w_1920.webp 1920w`"
             sizes="(max-width: 1920px) 100vw, 1920px"
         >
@@ -54,7 +54,7 @@
             class="landscape" 
             :style="landscapeStyle"
             alt="Landscape"
-            src="/images/VG.w_1920.png"
+            src="/images/VG.w_1920.webp"
             srcset="/images/VG.w_768.webp 768w, /images/VG.w_1017.webp 1017w, /images/VG.w_1920.webp 1920w"
             sizes="(max-width: 1920px) 100vw, 1920px"
         >
