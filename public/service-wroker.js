@@ -2,9 +2,6 @@ const staticCacheName = 'site-static-v1';
 const assets = [
     '/',
     '/index.html',
-    '/images/HG.w_1920.png',
-    '/images/MG.w_1920.png',
-    '/images/VG.w_1920.png',
     '/images/HG.w_1920.webp',
     '/images/HG.w_1017.webp',
     '/images/HG.w_768.webp',
