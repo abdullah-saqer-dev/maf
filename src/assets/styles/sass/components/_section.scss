@@ -1,0 +1,134 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+
+.section-wrapper {
+    position: relative;
+    padding: 100px 0 0;
+    margin-bottom: 150px;
+    justify-content: space-between;
+    align-items: center;
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+}
+.section-text {
+    position: relative;
+    .section-number {
+        position: absolute;
+        left: 0;
+        top: -75px;
+        z-index: -1;
+        opacity: 0.1;
+        font-size: 150px;
+        line-height: 1;
+        font-weight: 700;
+    }
+    .section-heading {
+        font-size: 30px;
+        font-weight: 900;
+    }
+    p {
+        font-weight: 700;
+        line-height: 1.8;
+        margin-bottom: 16px;
+    }
+    .read-more {
+        display: inline-flex;
+        align-items: center;
+        color: $gold;
+        transition: all 0.3s;
+        .icon {
+            margin-left: 16px;
+            width: 16px;
+            transform: rotate(-90deg);
+        }
+        &:hover {
+            text-indent: 5px;
+            font-weight: 600;
+        }
+    }
+}
+.section-img {
+    position: absolute;
+    max-height: 400px;
+    right: 0;
+    z-index: -1;
+    img {
+        max-height: 400px;
+    }
+    &::after {
+        @include psedo-absolute();
+        @include overlay($black-light, 0.75);
+    }
+}
+@media screen and (min-width: $tablet-min-point) {
+    .section-heading {
+        font-size: 30px;
+        margin-bottom: 27px;
+    }
+}
+@media screen and (min-width: $mid-min-point) {
+    .section-wrapper {
+        margin-bottom: 200px;
+    }
+    .section-text {
+        max-width: 490px;
+        .section-number {
+            top: -130px;
+        }
+    }
+    .section-img {
+        max-width: 400px;
+        max-height: unset;
+        position: static;
+        img {
+            max-height: unset;
+        }
+        &::after {
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: $desktop-min-point) {
+    .section-text {
+        max-width: 530px;
+        .section-heading {
+            font-size: 40px;
+        }
+        .section-number {
+            font-size: 180px;
+            left: -50px;
+            top: -92px;
+        }
+    }
+}
+@media screen and (min-width: $lg-min-point) {
+    .section-text {
+        .section-heading {
+            font-size: 50px;
+        }
+        .section-number {
+            font-size: 200px;
+            left: -55px;
+            top: -92px;
+        }
+    }
+    .section-img {
+        max-width: 500px;
+    }
+}
+@media screen and (min-width: $xl-min-point) {
+    .section-text {
+        .section-heading {
+            font-size: 64px;
+        }
+        .section-number {
+            font-size: 240px;
+            left: -150px;
+            top: -115px;
+        }
+    }
+    .section-img {
+        max-width: 100%;
+    }
+}

@@ -1,3 +1,8 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+let plugins = [];
+if(process.argv.indexOf('--bundleAnalyzer') != -1) {
+	plugins.push(new BundleAnalyzerPlugin());
+}
 module.exports = {
     devServer: {
         disableHostCheck: true
@@ -9,23 +14,26 @@ module.exports = {
         });
         config.module.rules.delete('eslint');
         config.plugin('html').tap(args => {
-            args[0].title = 'Landing Page';
+            args[0].title = 'MNTN';
             return args;
         });
         config.plugins.delete('prefetch');
     },
     productionSourceMap: false,
     runtimeCompiler: true,
+    configureWebpack: {
+        plugins,
+    },
     pwa: {
         workboxPluginMode: 'InjectManifest',
         workboxOptions: {
             navigateFallback: 'index.html',
-            swSrc: 'src/service-worker.js',
+            swSrc: '/service-worker.js',
             exclude: [
                 /\.map$/, 
                 /manifest\.json$/ 
             ],
         },
-        themeColor: '#FBD784'
+        themeColor: '#0B1D26'
     }
 }

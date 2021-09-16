@@ -1,0 +1,34 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+.sections-wrapper {
+    position: relative;
+    z-index: 8;
+    background: $black-light;
+    margin-bottom: 250px;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        height: 200px;
+        bottom: 99%;
+        z-index: 6;
+        pointer-events: none;
+        background: linear-gradient(180deg, transparent 0%, $black-light 61.38%);
+        @media screen and (min-width: 625px) {
+            &{
+                height: 400px;
+            }
+        }
+        @media screen and (min-width: $mid-min-point) {
+            &{
+                height: 40vh;
+            }
+        }
+        @media screen and (min-width: $xl-min-point) {
+            &{
+                height: 20vh;
+            }
+        }
+    }
+}

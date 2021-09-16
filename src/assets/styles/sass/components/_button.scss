@@ -1,0 +1,27 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+.btn {
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: $black-light;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0px 0px 40px rgba($black-light, 0.7);
+    border-radius: 50px;
+    transition: all 0.3s;
+    &:hover {
+        border-radius: 0;
+        color: $gold;
+        background: transparent;
+        border-color: $gold;
+    }
+}
