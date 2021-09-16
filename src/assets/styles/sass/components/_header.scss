@@ -93,6 +93,7 @@
         .nav-toggle {
             position: absolute;
             display: none;
+            color: #fff;
             @include position((top: 12px, right: 55px));
             @include size(40px, 40px);
             z-index: 10;
