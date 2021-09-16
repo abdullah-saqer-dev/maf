@@ -1,0 +1,156 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+@import '../lib/animation';
+.hero-section {
+    position: relative;
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    &::before {
+        @include psedo-absolute();
+        @include size(100%, 100%);
+        z-index: 1;
+        background: url('/images/BG-Hero.png');
+        @include cover(center, top);
+    }
+    img {
+        transform-style: preserve-3d;
+        will-change: transform;
+    }
+    &-content {
+        position: fixed;
+        top: 13%;
+        z-index: 6;
+        max-width: 80%;
+        padding: 16px;
+        justify-content: center;
+        .h1-title {
+            font-size: 25px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        .scroll-down {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            .icon {
+                margin-left: 16px;
+                position: relative;
+                .svg {
+                    position: absolute;
+                    inset: 0;
+                }
+            }
+            
+            &:hover {
+                color: $gold;
+                .icon {
+                    animation: jump 1s;
+                }
+            }
+        }
+        @media screen and (min-width: 625px) {
+            top: 20%;
+        }
+        @media screen and (min-width: $tablet-min-point) {
+            &{
+                top: 25%;
+                max-width: 600px;
+            }
+            .h1-title {
+                font-size: 40px;
+                margin-bottom: 32px;
+            }
+        }
+        @media screen and (min-width: $desktop-min-point) {
+            .h1-title {
+                font-size: 50px;
+            }
+        }
+        @media screen and (min-width: $lg-min-point) {
+            &{
+                max-width: 982px;
+            }
+            .h1-title {
+                font-size: 60px;
+            }
+        }
+        @media screen and (min-width: $xl-min-point) {
+            .h1-title {
+                font-size: 88px;
+            }
+        }
+    }
+}
+.clouds, .mountains, .landscape {
+    position: absolute;
+    inset: 0;
+}
+.mountains {
+    top: 20%;
+    z-index: 0;
+}
+.landscape {
+    top: 45%;
+    z-index: 5;
+}
+.social-media {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 20px;
+    top: 50%;
+    transform: translate(0,-50%);
+    z-index: 6;
+    &--title {
+        writing-mode: vertical-lr;
+        font-weight: bold;
+    }
+    span {
+        margin-bottom: 26px;
+        display: block;
+    }
+}
+@media screen and (min-width: 625px) {
+    .hero-section {
+        height: 600px;
+    }
+    .mountains {
+        top: 30%;
+        z-index: 0;
+    }
+    .landscape {
+        top: 50%;
+        z-index: 5;
+    }
+}
+@media screen and (min-width: $tablet-min-point) {
+    .hero-section {
+        height: 80vh;
+    }
+    .mountains {
+        top: 35%;
+    }
+    .landscape {
+        top: 55%;
+    }
+}
+@media screen and (min-width: $mid-min-point) {
+    .hero-section {
+        height: 100vh;
+    }
+    .mountains {
+        top: 40%;
+    }
+    .landscape {
+        top: 60%;
+    }
+}
+@media screen and (min-width: $desktop-min-point) {
+    .social-media {
+        left: 80px;
+    }
+}

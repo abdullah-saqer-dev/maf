@@ -1,0 +1,42 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+.sctions-navigation-wrapper {
+    position: fixed;
+    transform: translate(0, -50%);
+    top: 50%;
+    right: 20px;
+    z-index: 9;
+    padding: 20px 34px 20px 0;
+    .sctions-navigation-line {
+        position: absolute;
+        @include position((top: 0, right: 0));
+        width: 3px;
+        height: 100%;
+        background: rgba(255, 255, 255, 00.5rem);
+    }
+    .sctions-navigation-position {
+        position: static;
+        background: #fff;
+        height: 60px;
+        opacity: 1;
+        transform-style: preserve-3d;
+        will-change: transform;
+        transition: all 0.3s;
+    }
+    .navigation-item {
+        margin-bottom: 40px;
+        cursor: pointer;
+        user-select: none;
+        &:last-child {
+            margin: 0;
+        }
+        a {
+            font-weight: 700;
+        }
+    }
+    @media screen and (min-width: $desktop-min-point) {
+        & {
+            right: 80px;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import './helpers/variables';
+@import './helpers/utilities';
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.14;
+    background: $black-light;
+    color: #fff;
+}
+body * {
+    box-sizing: border-box;
+}

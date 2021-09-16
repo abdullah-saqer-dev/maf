@@ -1,0 +1,76 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+@import './button';
+.header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    padding: 20px 40px 10px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+    transition: all 0.4s ease-in-out;
+    &.white-header {
+        background: #fff;
+        color: $black-light;
+        padding-top: 20px;
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),
+                    0 4px 5px 0 rgba(0,0,0,.14),
+                    0 1px 10px 0 rgba(0,0,0,.12);
+        li a {
+            color: $black-light;
+        }
+    }
+    .logo {
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: 3px;
+        font-weight: 700;
+    }
+    .header-navigation ul {
+        display: flex;
+        li {
+            margin-right: 42px;
+            a {
+                position: relative;
+                font-weight: 500;
+                padding-bottom: 5px;
+                &::after {
+                    @include psedo-absolute();
+                    @include position((bottom: 0, left: 0));
+                    @include size(100%, 100%);
+                    background: $gold;
+                    transform: scaleX(0);
+                    transform-origin: 0;
+                    transition: transform 0.3s ease;
+                }
+                &:hover::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+    .header-actions {
+        display: flex;
+        align-items: center;
+        .search-btn {
+            margin-right: 32px;
+            cursor: pointer;
+            &:hover {
+                color: $gold;
+                transform: scale(1.1);
+                transform-origin: center center;
+            }
+        }
+    }
+    @media screen and (min-width: $tablet-min-point) {
+        &{
+            padding: 30px 60px 15px;
+        }
+    }
+    @media screen and (min-width: $desktop-min-point) {
+        &{
+            padding: 40px 80px 20px;
+        }
+    }
+}
