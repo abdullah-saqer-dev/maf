@@ -13,7 +13,13 @@
             </a>
         </div>
         <div class="section-img">
-            <img :src="sectionData.image" :alt="sectionData.title">
+            <img
+                :alt="sectionData.title"
+                loading="lazy"
+                :src="sectionData.image"
+                :srcset="`${sectionData.image_small} 989w, ${sectionData.image} 990w`"
+                sizes="(max-width: 990px) 100vw, 990px"
+            >
         </div>
     </section>
 </template>

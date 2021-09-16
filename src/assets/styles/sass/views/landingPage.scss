@@ -14,8 +14,7 @@
         bottom: 99%;
         z-index: 6;
         pointer-events: none;
-        background: url('/images/BG-Content.png') no-repeat;
-        @include cover(center, top);
+        background: linear-gradient(180deg, transparent 0%, $black-light 61.38%);
         @media screen and (min-width: 625px) {
             &{
                 height: 400px;
@@ -28,7 +27,7 @@
         }
         @media screen and (min-width: $xl-min-point) {
             &{
-                height: 50vh;
+                height: 20vh;
             }
         }
     }

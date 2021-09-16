@@ -1,3 +1,8 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+let plugins = [];
+if(process.argv.indexOf('--bundleAnalyzer') != -1) {
+	plugins.push(new BundleAnalyzerPlugin());
+}
 module.exports = {
     devServer: {
         disableHostCheck: true
@@ -16,6 +21,9 @@ module.exports = {
     },
     productionSourceMap: false,
     runtimeCompiler: true,
+    configureWebpack: {
+        plugins,
+    },
     pwa: {
         workboxPluginMode: 'InjectManifest',
         workboxOptions: {
