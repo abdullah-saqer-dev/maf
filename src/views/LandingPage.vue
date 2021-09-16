@@ -1,10 +1,10 @@
 <template>
     <div>
-        <header-component/>
 		<page-navigation
 			v-if="pageData.length"
 			:count="pageData.length"
 		/>
+        <header-component/>
 		<main>
 			<hero-component 
 				v-if="pageData.length"
