@@ -34,9 +34,30 @@
                 ></a>
             </span>
         </div>
-        <img src="/images/HG.png" width="100%" class="clouds" :style="cloudStyle" alt="Clouds">
-        <img src="/images/MG.png" width="100%" class="mountains" :style="mountainsStyle" alt="Mountains">
-        <img src="/images/VG.png" width="100%" class="landscape" :style="landscapeStyle" alt="Landscape">
+        <img 
+            class="clouds" 
+            :style="cloudStyle"
+            alt="Clouds"
+            src="/images/HG.w_1920.png"
+            :srcset="`/images/HG.w_768.webp 768w, /images/HG.w_1017.webp 1017w, /images/HG.w_1920.webp 1920w`"
+            sizes="(max-width: 1920px) 100vw, 1920px"
+        >
+        <img 
+            class="mountains" 
+            :style="mountainsStyle"
+            alt="Mountains"
+            src="/images/MG.w_1920.png"
+            :srcset="`/images/MG.w_768.webp 768w, /images/MG.w_1017.webp 1017w, /images/MG.w_1920.webp 1920w`"
+            sizes="(max-width: 1920px) 100vw, 1920px"
+        >
+        <img 
+            class="landscape" 
+            :style="landscapeStyle"
+            alt="Landscape"
+            src="/images/VG.w_1920.png"
+            srcset="/images/VG.w_768.webp 768w, /images/VG.w_1017.webp 1017w, /images/VG.w_1920.webp 1920w"
+            sizes="(max-width: 1920px) 100vw, 1920px"
+        >
     </div>
 </template>
 
@@ -75,7 +96,7 @@ export default {
         },
         arrow,
         instagram,
-        twitter
+        twitter,
     }),
     beforeDestroy() {
         window.removeEventListener("scroll", this.onScroll);

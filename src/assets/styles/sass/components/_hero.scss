@@ -12,8 +12,7 @@
         @include psedo-absolute();
         @include size(100%, 100%);
         z-index: 1;
-        background: url('/images/BG-Hero.png');
-        @include cover(center, top);
+        background: linear-gradient(330.24deg, transparent 31.06%, $black-light 108.93%);
     }
     img {
         transform-style: preserve-3d;

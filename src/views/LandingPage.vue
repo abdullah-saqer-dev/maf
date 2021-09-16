@@ -35,8 +35,16 @@
 <script>
 import Header from '@/components/Header.vue';
 import Hero from '@/components/Hero.vue';
-import Section from '@/components/Section.vue';
-import PageNavigation from '@/components/PageNavigation.vue';
+const Section = () => ({
+    component: import('@/components/Section.vue'),
+    delay: 2000,
+    timeout: 10000
+});
+const PageNavigation = () => ({
+    component: import('@/components/PageNavigation.vue'),
+    delay: 3000,
+    timeout: 10000
+});
 export default {
     name: 'langing-page',
     data: () => ({
