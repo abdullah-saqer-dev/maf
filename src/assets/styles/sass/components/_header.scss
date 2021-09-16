@@ -53,6 +53,7 @@
     .header-actions {
         display: flex;
         align-items: center;
+        position: relative;
         .search-btn {
             margin-right: 32px;
             cursor: pointer;
@@ -62,6 +63,53 @@
                 transform-origin: center center;
             }
         }
+        .nav-overlay {
+            position: absolute;
+            @include position((top: 12px, right: 55px));
+            z-index: -1;
+            background: rgba($black-light, 0.8);
+            border-radius: 50%;
+            transition: 1s;
+            transform: scale3d(0, 0, 0);
+        }
+        .nav-items {
+            position: fixed;
+            @include position((top: 50%, right: 0, left: 0));
+            transform: translate(0, -50%);
+            display: none;
+            width: 200px;
+            text-align: center;
+            margin: 0 auto;
+            z-index: 10;
+            .nav-item {
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .nav-toggle {
+            position: absolute;
+            display: none;
+            @include position((top: 12px, right: 55px));
+            @include size(40px, 40px);
+            z-index: 10;
+        }
+        .nav-visible {
+            .nav-overlay {
+                z-index: 9;
+                transform: scale3d(1, 1, 1);
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-items {
+                display: block;
+            }
+        }
+        
     }
     @media screen and (min-width: $tablet-min-point) {
         &{
