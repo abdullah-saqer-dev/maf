@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-section">
+    <div class="hero-section" ref="heroSection">
         <div class="hero-section-content" :style="contentStyle">
             <div class="title-with-line">
                 <div class="title-line"></div>
@@ -86,18 +86,7 @@ export default {
     },
     methods: {
         initAnimation() {
-            const windowWidth = window.innerWidth;
-            if(windowWidth >= 990) {
-                this.stepsTotal = window.innerHeight;
-            } else if(windowWidth >= 768) {
-                this.stepsTotal = window.innerHeight * 0.8;
-                alert('here')
-            } else if(windowWidth >= 625) {
-                this.stepsTotal = 600;
-            } else {
-                this.stepsTotal = 400;
-            }
-            this.stepsTotal*= 0.7;
+            this.stepsTotal = this.$refs.heroSection.offsetHeight * 0.7;
             for(const [key, value] of Object.entries(this.animationSettings)) {
                 this.animationSettings[key].step = value.finalPosition / this.stepsTotal;
             }
